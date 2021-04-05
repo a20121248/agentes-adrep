@@ -1,0 +1,117 @@
+@media print {    
+    .no-print, .no-print * {
+      display: none!important;
+    }
+  }
+    
+  .voucher {
+    font-size: 10px;
+    font-family: 'Arial';
+    line-height: 1.5;
+  }
+  
+  .msg-1 {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .msg-2 {
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .msg-3 {
+    margin-top: 10px;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .msg-4 {
+    font-size: 9px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+  
+  td,
+  th,
+  tr,
+  table {
+    &.voucher {
+      padding: 0!important;
+    }
+  }
+  
+  .ticket-top h1 {
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .ticket-company {
+    margin: 6px 0 7px 0;
+  }
+  
+  .title-2 {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .title-3 {
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  th.item, td.item {
+    width: 80px;
+    font-weight: 600;
+  }
+  
+  th.sep, td.sep {
+    width: 5px;
+    font-weight: 600;
+  }
+  
+  th.value, td.value {
+    width: 95px;
+  }
+  
+  .centrado {
+      text-align: center;
+      align-content: center;
+  }
+  
+  .ticket {
+      width: 180px;
+      max-width: 180px;
+  }
+  
+  img {
+      max-width: inherit;
+      width: inherit;
+  }
+  
+  .example-card {
+    max-width: 400px;
+  }
+    
+  .example-header-image {
+    background-image: url('/assets/img/luz-del-sur.png');
+    background-size: cover;
+  }
+  
+  
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+    
+  .example-full-width {
+    width: 100%;
+  }

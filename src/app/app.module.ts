@@ -29,6 +29,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { TicketGeneratorCpComponent } from './pages/ticket-generator-cp/ticket-generator-cp.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     FooterComponent,
     NavbarComponent,
-    TicketGeneratorComponent
+    TicketGeneratorComponent,
+    TicketGeneratorCpComponent
   ],
   imports: [
     BrowserModule,

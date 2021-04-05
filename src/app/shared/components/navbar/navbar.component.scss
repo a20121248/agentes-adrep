@@ -1,3 +1,8 @@
+@media print {    
+  .no-print, .no-print * {
+    display: none!important;
+  }
+}
 .modulos {
   top: 0;
   box-shadow:0 1px 4px rgba(0,0,0,0.2);
