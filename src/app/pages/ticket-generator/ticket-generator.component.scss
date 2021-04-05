@@ -1,3 +1,90 @@
+.voucher {
+  font-size: 10px!important;
+  font-family: 'Arial'!important;
+}
+.msg-1 {
+  font-weight: 600;
+  text-align: center;
+}
+.msg-2 {
+  font-size: 10px;
+  text-align: center;
+}
+.msg-3 {
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+.msg-4 {
+  font-size: 9px;
+  text-align: justify;
+}
+td,
+th,
+tr,
+table {
+  padding: 0!important;
+}
+
+.ticket-top h1 {
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.ticket-company {
+    
+}
+
+.title-2 {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.title-3 {
+    font-size: 12px;
+    text-align: center;
+}
+
+
+th.item, td.item {
+  width: 46%;
+  font-weight: 600;
+}
+
+th.sep, td.sep {
+  width: 4%;
+  font-weight: 600;
+}
+
+th.value, td.value {
+  width: 50%;
+}
+
+.centrado {
+    text-align: center;
+    align-content: center;
+}
+
+.ticket {
+    width: 180px;
+    max-width: 180px;
+}
+
+img {
+    max-width: inherit;
+    width: inherit;
+}
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
 .example-card {
     max-width: 400px;
   }
@@ -24,3 +111,4 @@
   td {
     padding-right: 8px;
   }
+

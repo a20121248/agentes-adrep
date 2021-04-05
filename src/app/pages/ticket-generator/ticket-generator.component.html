@@ -58,74 +58,81 @@
                 <mat-card-title>Vista preliminar</mat-card-title>
             </mat-card-header>
             <mat-card-content>        
-                <table class="table table-borderless voucher">
+
+            <div class="ticket">
+                <div class="ticket-top text-center mb-3">
+                    <h1>LIBRERIA BAZAR - LORENA</h1>
+                    <div class="msg-1">Transacción exitosa</div>
+                    <div class="msg-2">{{ myDate | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+                    <div class="msg-2">Luz del Sur - {{ supply }}</div>
+                  </div>
+          
+                  <div class="ticket-company text-center mb-2">
+                    <div class="msg-1">CELL POWER S.A.C.</div>
+                    <div class="msg-2">CONSTANCIA DE PAGO</div>
+                    <div class="msg-2">LUZ DEL SUR</div>
+                  </div>        
+                  <table class="table table-borderless voucher">
                     <tbody>
-                    <tr>
-                        <td colspan="2" class="text-center">
-                            <div class="title-1">LIBRERIA BAZAR - LORENA</div>
+                      <tr>
+                        <td class="item">SUMINISTRO</td>
+                        <td class="sep">:</td>
+                        <td class="value">{{ supply }}</td>
+                      </tr>
+                      <tr>
+                        <td class="item">NOMBRE</td>
+                        <td class="sep">:</td>
+                        <td class="value">{{name | uppercase}}</td>
+                      </tr>
+                      <tr>
+                        <td class="item">Nº OPERACIÓN</td>
+                        <td class="sep">:</td>
+                        <td class="value">{{ operation }}</td>
+                      </tr>
+                      <tr>
+                        <td class="item">TIPO DE PAGO</td>
+                        <td class="sep">:</td>
+                        <td class="value">PAGO A CUENTA</td>
+                      </tr>
+                      <tr>
+                        <td class="item">MONTO</td>
+                        <td class="sep">:</td>
+                        <td class="value">
+                          <div fxLayout="row" fxLayoutAlign="space-between">
+                            <div>S/</div>
+                            <div>{{ amount | number:'1.2-2' }}</div>
+                          </div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="text-center">
-                            <div class="msg-1">Transacción exitosa</div>
-                            <div class="msg-2">Luz del Sur - {{ supply }}</div>
+                      </tr>
+                      <tr>
+                        <td class="item">COMISIÓN</td>
+                        <td class="sep">:</td>
+                        <td class="value">
+                            <div fxLayout="row" fxLayoutAlign="space-between">
+                            <div>S/</div>
+                            <div>{{ comission | number:'1.2-2' }}</div>
+                          </div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="text-center">
-                            <div class="title-1">CELL POWER S.A.C.</div>
+                      </tr>
+                      <tr>
+                        <td class="item">MONTO TOTAL</td>
+                        <td class="sep">:</td>
+                        <td class="value">
+                          <div fxLayout="row" fxLayoutAlign="space-between">
+                            <div>S/</div>
+                            <div>{{ amount + comission | number:'1.2-2' }}</div>
+                          </div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>Fecha:</td>
-                        <td>{{myDate | date: 'dd/MM/yyyy'}}</td>
-                    </tr>
-                    <tr>
-                        <td>Hora:</td>
-                        <td>{{myDate | date: 'hh:mm:ss'}}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="text-center">
-                            <div class="msg-1">CONSTANCIA DE PAGO</div>
-                            <div class="msg-2">LUZ DEL SUR</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>SUMINISTRO:</td>
-                        <td>{{supply}}</td>
-                    </tr>
-                    <tr>
-                        <td>NOMBRE:</td>
-                        <td>{{name | uppercase}}</td>
-                    </tr>
-                    <tr>
-                        <td>Nro. OPERACIÓN:</td>
-                        <td>{{operation}}</td>
-                    </tr>
-                    <tr>
-                        <td>Tipo de pago:</td>
-                        <td>Pago a cuenta</td>
-                    </tr>
-                    <tr>
-                        <td>Importe pagado:</td>
-                        <td>S/ {{ amount | number:'1.2-2' }}</td>
-                    </tr>
-                    <tr>
-                        <td>Comisión:</td>
-                        <td>S/ {{ comission | number:'1.2-2' }}</td>
-                    </tr>
-                    <tr>
-                        <td>TOTAL:</td>
-                        <td>S/ {{ amount + comission | number:'1.2-2' }}</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="text-center">
-                            <div class="msg-1">PAGO DE RECIBO SUJETO A COMISIÓN</div>
-                            <div class="msg-2">Antes de retirarse de la ventanilla revise sus datos y verifique su vuelto. Conserve su Constancia de Pago, acredita la transacción realizada.</div>
-                        </td>
-                    </tr>
+                      </tr>
                     </tbody>
-                </table>
+                  </table>
+          
+                  <div class="ticket-bottom">
+                    <div class="msg-3 text-center">PAGO DE RECIBO SUJETO A COMISIÓN</div>
+                    <p class="msg-4 text-break">Antes de retirarse de la ventanilla revise sus datos y verifique su vuelto. Conserve su Constancia de Pago, acredita la transacción realizada.</p>
+          
+                  </div>
+            </div>
 
             </mat-card-content>
             <mat-card-actions>
