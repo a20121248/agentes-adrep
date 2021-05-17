@@ -1,14 +1,13 @@
 <div class="wrapper" fxLayout.gt-sm="row" fxLayout="row" fxLayoutGap="16px">
 	<div class="no-print" fxFlex.gt-sm="60%" fxFlex fxLayout="column" fxLayoutAlign="center center">
-		<mat-card class="example-card">
+		<mat-card class="data-card">
 			<mat-card-header>
-				<div mat-card-avatar class="example-header-image"></div>
-				<mat-card-title>Datos de pago - CELL POWER</mat-card-title>
+				<mat-card-title>Datos de pago - SCOTIA</mat-card-title>
 				<mat-card-subtitle>Introduce los datos para generar un voucher de pago</mat-card-subtitle>
 			</mat-card-header>
 			<mat-card-content>
-				<form class="example-form">
-					<mat-form-field class="example-full-width" appearance="outline">
+				<form class="data-form">
+					<mat-form-field class="data-full-width" appearance="outline">
 						<mat-label>Contenido</mat-label>
 						<textarea
 							matInput
@@ -23,19 +22,19 @@
 					<mat-card-content class="mat-card-content">
 						<div class="" fxLayout="row" fxLayoutGap="20px">
 							<div fxFlex="30">
-								<mat-form-field class="example-full-width" appearance="outline">
+								<mat-form-field class="data-full-width" appearance="outline">
 									<mat-label>Monto original</mat-label>
 									<input matInput type="number" step=".5" [(ngModel)]="amount" name="amount">
 								</mat-form-field>
 							</div>
 							<div fxFlex="20">
-								<mat-form-field class="example-full-width" appearance="outline">
+								<mat-form-field class="data-full-width" appearance="outline">
 									<mat-label>Comisión</mat-label>
 									<input matInput type="number" step=".5" [(ngModel)]="comission" name="comission">
 								</mat-form-field>
 							</div>
 							<div fxFlex="35">
-								<mat-form-field class="example-full-width" appearance="outline">
+								<mat-form-field class="data-full-width" appearance="outline">
 									<mat-label>Total</mat-label>
 									<input matInput value="{{ amount + comission | number:'1.2-2' }}">
 								</mat-form-field>
@@ -51,18 +50,15 @@
 	</div>
 
 	<div class="ticket">
-		<div class="ticket-top text-center">
-			<hr>
-			<h1>CELL POWER</h1>
-			<hr>
+		<div class="company">
+        	<img [src]="'assets/img/scotia.png'" alt="">
 		</div>
 		<div class="ticket-company text-center">
 			<div class="msg-1">CONSTANCIA DE PAGO</div>
 			<div class="msg-2">Transacción exitosa</div>
 		</div>
-		<pre class="voucher-text">{{ content }}</pre>
-		<pre class="voucher-text">Comisión:	S/ {{ comission | number:'1.2-2' }}
-
+		<pre class="voucher-content">{{ content }}
+Comisión:	S/ {{ comission | number:'1.2-2' }}
 Total:	S/ {{ amount + comission | number:'1.2-2' }}</pre>
 		<div class="ticket-bottom">
 			<div class="msg-3 text-center">PAGO DE RECIBO SUJETO A COMISIÓN</div>

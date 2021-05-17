@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-ticket-generator',
@@ -15,7 +16,8 @@ export class TicketGeneratorComponent implements OnInit {
   comission = 1.00;
   myDate = new Date();  
 
-  constructor() {
+  constructor(private titleService: Title) {
+    this.titleService.setTitle("LUZ DEL SUR | Agentes ADREP");
     setInterval(() => {
       this.myDate = new Date();
     }, 1000);

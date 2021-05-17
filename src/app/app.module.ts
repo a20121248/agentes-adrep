@@ -30,6 +30,10 @@ import { MatChipsModule } from '@angular/material/chips';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { TicketGeneratorCpComponent } from './pages/ticket-generator-cp/ticket-generator-cp.component';
+import { TicketBcpComponent } from './pages/ticket-bcp/ticket-bcp.component';
+import { TicketBbvaComponent } from './pages/ticket-bbva/ticket-bbva.component';
+import { TicketIbkComponent } from './pages/ticket-ibk/ticket-ibk.component';
+import { TicketScotiaComponent } from './pages/ticket-scotia/ticket-scotia.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { TicketGeneratorCpComponent } from './pages/ticket-generator-cp/ticket-g
     FooterComponent,
     NavbarComponent,
     TicketGeneratorComponent,
-    TicketGeneratorCpComponent
+    TicketGeneratorCpComponent,
+    TicketBcpComponent,
+    TicketBbvaComponent,
+    TicketIbkComponent,
+    TicketScotiaComponent
   ],
   imports: [
     BrowserModule,

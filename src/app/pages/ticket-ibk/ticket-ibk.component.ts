@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-ticket-generator-cp',
-  templateUrl: './ticket-generator-cp.component.html',
-  styleUrls: ['./ticket-generator-cp.component.scss']
+  selector: 'app-ticket-ibk',
+  templateUrl: './ticket-ibk.component.html',
+  styleUrls: ['./ticket-ibk.component.scss']
 })
-export class TicketGeneratorCpComponent implements OnInit {
+export class TicketIbkComponent implements OnInit {
   content = '';
   amount = 0;
   comission = 1.00;
 
   constructor(private titleService: Title) {
-    this.titleService.setTitle("CELLPOWER | Agentes ADREP");
+    this.titleService.setTitle("IBK | Agentes ADREP");
   }
 
   public parseAmount(event: string): void {
@@ -23,5 +23,4 @@ export class TicketGeneratorCpComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

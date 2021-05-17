@@ -4,26 +4,39 @@
   }
 }
 
+.company {
+  text-align: center;
+  margin-bottom: 9px;
+  img {
+    height: 50px;
+  }    
+}
+
+.ticket {
+  line-height: 1;
+  max-width: 180px;
+  width: 180px;
+}
+
 .voucher {
-  font-size: 10px;
+  font-size: 9px;
   font-family: 'Arial';
-  line-height: 1.5;
 }
 
 .msg-1 {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   text-align: center;
 }
 
 .msg-2 {
-  font-size: 10px;
+  font-size: 9px;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 .msg-3 {
-  margin-top: 10px;
+  margin: 10px 0 4px 0;
   font-size: 9px;
   font-weight: 600;
   text-align: center;
@@ -32,7 +45,6 @@
 .msg-4 {
   font-size: 9px;
   text-align: justify;
-  line-height: 1.5;
 }
 
 td,
@@ -41,6 +53,12 @@ tr,
 table {
   &.voucher {
     padding: 0!important;
+  word-break: break-all;
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
   }
 }
 
@@ -68,7 +86,7 @@ table {
 }
 
 th.item, td.item {
-  width: 80px;
+  width: 75px;
   font-weight: 600;
 }
 
@@ -78,17 +96,12 @@ th.sep, td.sep {
 }
 
 th.value, td.value {
-  width: 95px;
+  width: 100px;
 }
 
 .centrado {
     text-align: center;
     align-content: center;
-}
-
-.ticket {
-    width: 180px;
-    max-width: 180px;
 }
 
 img {
