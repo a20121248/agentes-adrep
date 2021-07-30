@@ -21,6 +21,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     children : [
+      { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
       { path: 'dashboard', loadChildren: () => import('./admin/dashboard/dashboard.module').then(m => m.DashboardModule) },
       { path: 'depositos', loadChildren: () => import('./admin/deposits/deposits.module').then(m => m.DepositsModule) },
       { path: 'tickets', loadChildren: () => import('./admin/tickets/tickets.module').then(m => m.TicketsModule) }

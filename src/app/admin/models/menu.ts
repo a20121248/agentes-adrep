@@ -56,7 +56,7 @@ export let menu: NavItem[] = [
         route: 'tickets/luz-del-sur'
       },
       {
-        displayName: 'Luz del Sur - Datos',
+        displayName: 'Luz del Sur - Manual',
         iconName: 'account_balance',
         route: 'tickets/luz-del-sur-datos'
       },

@@ -18,7 +18,7 @@ import { TicketGeneratorComponent } from './ticket-generator/ticket-generator.co
 import { TicketLuzDelSurComponent } from './ticket-luz-del-sur/ticket-luz-del-sur.component';
 
 export const routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'bbva' },
+    { path: '', pathMatch: 'full', redirectTo: 'luz-del-sur' },
     { path: 'luz-del-sur', component: TicketLuzDelSurComponent },
     { path: 'bbva', component: TicketBbvaComponent },
     { path: 'bcp', component: TicketBcpComponent },
