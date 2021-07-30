@@ -1,0 +1,130 @@
+<div class="wrapper" fxLayout.gt-sm="row" fxLayout="row" fxLayoutGap="16px">
+    <div class="no-print" fxFlex.gt-sm="60%" fxFlex fxLayout="column" fxLayoutAlign="center center">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Datos de pago - Luz del Sur</mat-card-title>
+                <mat-card-subtitle>Introduce los datos para generar un voucher de pago</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <form class="example-form">
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Número de suministro</mat-label>
+                                    <input matInput type="text" [(ngModel)]="supply" name="supply">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Número de operación</mat-label>
+                                    <input matInput type="text" [(ngModel)]="operation" name="operation">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" >
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Nombre del cliente</mat-label>
+                                    <input matInput type="text" [(ngModel)]="name" name="name">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Monto (S/)</mat-label>
+                                    <input matInput type="number" [(ngModel)]="amount" name="amount">
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Comisión (S/)</mat-label>
+                                    <input matInput type="number" [(ngModel)]="comission" name="comission">
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                    </table>
+                  </form>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary" class="no-print" mat-button (click)="printPage()">IMPRIMIR</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <div class="ticket">
+        <div class="ticket-top text-center">
+            <div class="company">
+                <img [src]="'assets/img/luz-del-sur.png'" alt="">
+            </div>
+            <div class="msg-1">Transacción exitosa</div>
+            <div class="msg-2">{{ myDate | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+            <div class="msg-2">Luz del Sur - {{ supply }}</div>
+        </div>
+        <div class="ticket-company text-center">
+            <div class="msg-1">CELL POWER S.A.C.</div>
+            <div class="msg-2">CONSTANCIA DE PAGO</div>
+            <div class="msg-2">LUZ DEL SUR</div>
+        </div>
+        <table class="voucher">
+            <tbody>
+            <tr>
+                <td class="item">SUMINISTRO</td>
+                <td class="sep">:</td>
+                <td class="value">{{ supply }}</td>
+            </tr>
+            <tr>
+                <td class="item">NOMBRE</td>
+                <td class="sep">:</td>
+                <td class="value">{{name | uppercase}}</td>
+            </tr>
+            <tr>
+                <td class="item">Nº OPERACIÓN</td>
+                <td class="sep">:</td>
+                <td class="value">{{ operation }}</td>
+            </tr>
+            <tr>
+                <td class="item">TIPO DE PAGO</td>
+                <td class="sep">:</td>
+                <td class="value">PAGO A CUENTA</td>
+            </tr>
+            <tr>
+                <td class="item">MONTO</td>
+                <td class="sep">:</td>
+                <td class="value">
+                <div fxLayout="row" fxLayoutAlign="space-between">
+                    <div>S/</div>
+                    <div>{{ amount | number:'1.2-2' }}</div>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="item">COMISIÓN</td>
+                <td class="sep">:</td>
+                <td class="value">
+                    <div fxLayout="row" fxLayoutAlign="space-between">
+                    <div>S/</div>
+                    <div>{{ comission | number:'1.2-2' }}</div>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="item">MONTO TOTAL</td>
+                <td class="sep">:</td>
+                <td class="value">
+                <div fxLayout="row" fxLayoutAlign="space-between">
+                    <div>S/</div>
+                    <div>{{ amount + comission | number:'1.2-2' }}</div>
+                </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="ticket-bottom">
+            <div class="msg-3 text-center">PAGO DE RECIBO SUJETO A COMISIÓN</div>
+            <p class="msg-4 text-break">Antes de retirarse de la ventanilla revise sus datos y verifique su vuelto. Conserve su Constancia de Pago, acredita la transacción realizada.</p>          
+        </div>
+    </div>
+</div>

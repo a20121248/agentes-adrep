@@ -1,0 +1,26 @@
+<div class="content">
+    <h1>Cuentas de {{this.personAccounts.name}}</h1>
+    <div *ngFor="let bank of personAccounts.banks" class="bank">
+        <h2>{{bank.name}}</h2>
+        <table mat-table [dataSource]="bank.accounts" class="mat-elevation-z8">
+            <ng-container matColumnDef="holder">
+              <th mat-header-cell *matHeaderCellDef> Titular </th>
+              <td mat-cell *matCellDef="let element"> {{element.holder}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="number">
+              <th mat-header-cell *matHeaderCellDef> Número de cuenta </th>
+              <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="ammount">
+              <th mat-header-cell *matHeaderCellDef> Monto </th>
+              <td mat-cell *matCellDef="let element"> {{element.ammount}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>      
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

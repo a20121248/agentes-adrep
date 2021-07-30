@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="modulos no-print" fxFlex="0 0 auto">
+    <div fxFlex fxLayout fxLayoutAlign="flex-start">
+        <span class=""><img class="logo" [src]="'assets/img/logo.png'" alt="image"></span>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="center">
+        <mat-nav-list fxLayout>
+            <a mat-list-item [routerLink]="['inicio']" routerLinkActive="active"><span>INICIO</span></a>
+        </mat-nav-list>
+        <mat-nav-list fxLayout>
+            <a mat-list-item [routerLink]="['productos']" routerLinkActive="active"><span>PRODUCTOS</span></a>
+        </mat-nav-list>
+        <mat-nav-list fxLayout>
+            <a mat-list-item [routerLink]="['contactanos']" routerLinkActive="active"><span>CONTÁCTANOS</span></a>
+        </mat-nav-list>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end">
+        <mat-nav-list fxLayout class="logout">
+            <a mat-list-item [routerLink]="['admin']" routerLinkActive="active"><span>ADMIN</span></a>
+        </mat-nav-list>
+    </div>
+</mat-toolbar>
