@@ -83,24 +83,34 @@ export class RechargesComponent implements OnInit {
         .company img {
           height: 50px;
        }
+        .flex-container {
+          display: flex;
+          flex-direction: row;
+       }
+        @media (max-width: 800px) {
+          .flex-container {
+            flex-direction: column;
+         }
+       }
         .ticket {
           line-height: 1;
           max-width: 180px;
           width: 180px;
        }
-        .voucher {
-          font-size: 9px;
-          font-family: 'Arial';
+        .ticket-company {
+          margin: 0 0 8px 0;
        }
         .msg-1 {
           font-size: 10px;
           font-weight: 600;
           text-align: center;
+          margin-bottom: 3px;
        }
         .msg-2 {
           font-size: 9px;
           text-align: center;
-          line-height: 1.7;
+          line-height: 1;
+          margin-bottom: 2px;
        }
         .msg-3 {
           margin: 10px 0 4px 0;
@@ -112,57 +122,28 @@ export class RechargesComponent implements OnInit {
           font-size: 9px;
           text-align: justify;
        }
-        td.voucher, th.voucher, tr.voucher, table.voucher {
-          padding: 0 !important;
-          word-break: break-all;
-          white-space: pre-wrap;
-         /* Since CSS 2.1 */
-          white-space: -moz-pre-wrap;
-         /* Mozilla, since 1999 */
-          white-space: -pre-wrap;
-         /* Opera 4-6 */
-          white-space: -o-pre-wrap;
-         /* Opera 7 */
-          word-wrap: break-word;
-         /* Internet Explorer 5.5+ */
+        pre {
+          font-size: 9px;
        }
-        .ticket-top h1 {
-          font-size: 13px;
+        textarea {
+          font-size: 12px;
+          text-align: justify;
           line-height: 1;
-          font-weight: 600;
-          text-align: center;
-          margin: 0;
-       }
-        .ticket-company {
-          margin: 6px 0 7px 0;
-       }
-        .title-2 {
-          font-size: 12px;
-          font-weight: 600;
-          text-align: center;
-       }
-        .title-3 {
-          font-size: 12px;
-          text-align: center;
-       }
-        th.item, td.item {
-          width: 75px;
-          font-weight: 600;
-       }
-        th.sep, td.sep {
-          width: 5px;
-          font-weight: 600;
-       }
-        th.value, td.value {
-          width: 100px;
-       }
-        .centrado {
-          text-align: center;
-          align-content: center;
        }
         img {
           max-width: inherit;
           width: inherit;
+       }
+        .example-card {
+          max-width: 400px;
+       }
+        .example-form {
+          min-width: 150px;
+          max-width: 500px;
+          width: 100%;
+       }
+        .example-full-width {
+          width: 100%;
        }       
     </style>
 </head>
