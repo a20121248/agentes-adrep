@@ -1,5 +1,3 @@
-/*export class Menu {
-}*/
 import { NavItem } from "./nav-item";
 
 export let menu: NavItem[] = [
@@ -9,39 +7,44 @@ export let menu: NavItem[] = [
     route: 'dashboard'
   },
   {
-    displayName: 'Depósitos',
-    iconName: 'groups',
-    route: 'depositos',
+    displayName: 'Recargas y Pagos',
+    iconName: 'receipt',
+    route: 'recargas',
     children: [
       {
-        displayName: 'Familia',
-        iconName: 'face',
-        route: 'depositos/familia'
+        displayName: 'Pago genérico',
+        iconName: 'account_balance',
+        route: 'recargas/pago-generico'
       },
       {
-        displayName: 'Roberto',
-        iconName: 'face',
-        route: 'depositos/roberto'
+        displayName: 'Claro',
+        iconName: 'account_balance',
+        route: 'recargas/claro'
       },
       {
-        displayName: 'Artur',
-        iconName: 'face',
-        route: 'depositos/artur'
+        displayName: 'Movistar',
+        iconName: 'account_balance',
+        route: 'recargas/movistar'
       },
       {
-        displayName: 'Mirian Jenny',
-        iconName: 'face',
-        route: 'depositos/mirian-jenny'
+        displayName: 'Entel',
+        iconName: 'account_balance',
+        route: 'recargas/entel'
       },
       {
-        displayName: 'Luis',
-        iconName: 'face',
-        route: 'depositos/luis'
+        displayName: 'Bitel',
+        iconName: 'account_balance',
+        route: 'recargas/bitel'
       },
       {
-        displayName: 'Nelson',
-        iconName: 'face',
-        route: 'depositos/nelson'
+        displayName: 'DIRECTV',
+        iconName: 'account_balance',
+        route: 'recargas/directv'
+      },
+      {
+        displayName: 'Flash Mobile',
+        iconName: 'account_balance',
+        route: 'recargas/flash-mobile'
       }
     ]
   },
@@ -85,6 +88,43 @@ export let menu: NavItem[] = [
         iconName: 'account_balance',
         route: 'tickets/cell-power'
       }*/
+    ]
+  },
+  {
+    displayName: 'Depósitos',
+    iconName: 'groups',
+    route: 'depositos',
+    children: [
+      {
+        displayName: 'Familia',
+        iconName: 'face',
+        route: 'depositos/familia'
+      },
+      {
+        displayName: 'Roberto',
+        iconName: 'face',
+        route: 'depositos/roberto'
+      },
+      {
+        displayName: 'Artur',
+        iconName: 'face',
+        route: 'depositos/artur'
+      },
+      {
+        displayName: 'Mirian Jenny',
+        iconName: 'face',
+        route: 'depositos/mirian-jenny'
+      },
+      {
+        displayName: 'Luis',
+        iconName: 'face',
+        route: 'depositos/luis'
+      },
+      {
+        displayName: 'Nelson',
+        iconName: 'face',
+        route: 'depositos/nelson'
+      }
     ]
   }
 ];

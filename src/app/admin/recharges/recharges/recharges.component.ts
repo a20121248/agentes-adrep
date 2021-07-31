@@ -1,43 +1,66 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import {Title} from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-ticket-luz-del-sur',
-  templateUrl: './ticket-luz-del-sur.component.html',
-  styleUrls: ['./ticket-luz-del-sur.component.scss']
+  selector: 'app-recharges',
+  templateUrl: './recharges.component.html',
+  styleUrls: ['./recharges.component.scss']
 })
-export class TicketLuzDelSurComponent implements OnInit {
-  content = '';
-  supply = '303341';
-  operation = '1077621';
-  authorization = '16932532'
-  name = 'Javier Monzon';
-  payment_type = 'Pago a cuenta';
-  amount = 97.70;
-  comission = 1.00;
-  myDate = new Date();
-
-  constructor(private titleService: Title) {
-    this.titleService.setTitle("LUZ DEL SUR | Agentes ADREP");
+export class RechargesComponent implements OnInit {
+  myDate: Date = new Date();
+  company: string = 'Defecto';
+  imgPath: string = 'default.png';
+  imgHeight: number = 50;
+  content: string = '';
+  payment_type: string = '';
+  
+  constructor(private route: ActivatedRoute) {
     setInterval(() => {
       this.myDate = new Date();
     }, 1000);
+
+    this.route.params.subscribe( params => {
+      if (params.company == 'pago-generico') {
+        this.company = 'Pago de servicio';
+        this.imgPath = 'assets/img/logos/contenido-de-calidad.png';
+        this.imgHeight = 60;
+        this.payment_type = 'CONSTANCIA DE PAGO';
+      } else if (params.company == 'claro') {
+        this.company = 'Claro';
+        this.imgPath = 'assets/img/moviles/claro.png';
+        this.imgHeight = 50;
+        this.payment_type = 'RECARGA VIRTUAL';
+      } else if (params.company == 'movistar') {
+        this.company = 'Movistar';
+        this.imgPath = 'assets/img/moviles/movistar.png';
+        this.imgHeight = 50;
+        this.payment_type = 'RECARGA VIRTUAL';
+      } else if (params.company == 'entel') {
+        this.company = 'Entel';
+        this.imgPath = 'assets/img/moviles/entel-2.png';
+        this.imgHeight = 50;
+        this.payment_type = 'RECARGA VIRTUAL';
+      } else if (params.company == 'bitel') {
+        this.company = 'Bitel';
+        this.imgPath = 'assets/img/moviles/bitel.png';
+        this.imgHeight = 30;
+        this.payment_type = 'RECARGA VIRTUAL';
+      } else if (params.company == 'directv') {
+        this.company = 'DIRECTV';
+        this.imgPath = 'assets/img/moviles/directv.png';
+        this.imgHeight = 30;
+        this.payment_type = 'RECARGA VIRTUAL';
+      } else if (params.company == 'flash-mobile') {
+        this.company = 'Flash Mobile';
+        this.imgPath = 'assets/img/moviles/flash-mobile.png';
+        this.imgHeight = 40;
+        this.payment_type = 'RECARGA VIRTUAL';
+      }
+    });
   }
 
-  public parseAmount(event: string): void {
+  public parseContent(event: string): void {
     this.content = event.trim();
-    var suministro_str = new String(this.content); 
-    var index = suministro_str.indexOf("SUMINISTRO:"); 
-    var resto = this.content.substring(index);
-    var lines = resto.split(/\r?\n/);
-    // SUMINISTRO:                    1307726
-    this.supply = lines[0].split(':')[1].trim();
-    this.name = lines[1].split(':')[1].trim();
-    this.operation = lines[2].split(':')[1].trim();
-    this.authorization = lines[3].split(':')[1].trim();
-    this.payment_type = lines[4].split(':')[1].trim();
-    this.amount = parseFloat(lines[5].split('S/ ')[1].replace(/,/g, ''));
   }
 
   public printPage(): void {

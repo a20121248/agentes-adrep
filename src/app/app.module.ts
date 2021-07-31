@@ -25,7 +25,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AdminComponent } from './admin/admin.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HomeComponent } from './site/home/home.component';
 import { ContactComponent } from './site/contact/contact.component';
@@ -41,7 +40,6 @@ import { MenuListItemComponent } from './admin/components/menu-list-item/menu-li
     FooterComponent,
     NavbarComponent,
     AdminComponent,
-    SidebarComponent,
     ToolbarComponent,
     HomeComponent,
     ContactComponent,

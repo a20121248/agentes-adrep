@@ -1,8 +1,8 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { MediaChange, MediaObserver } from "@angular/flex-layout";
 import { Subscription } from 'rxjs';
-import { NavItem } from './models/nav-item';
 import { menu } from './models/menu';
+import { NavItem } from './models/nav-item';
 
 @Component({
   selector: 'app-admin',

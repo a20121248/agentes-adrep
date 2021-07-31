@@ -23,8 +23,9 @@ const routes: Routes = [
     children : [
       { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
       { path: 'dashboard', loadChildren: () => import('./admin/dashboard/dashboard.module').then(m => m.DashboardModule) },
-      { path: 'depositos', loadChildren: () => import('./admin/deposits/deposits.module').then(m => m.DepositsModule) },
-      { path: 'tickets', loadChildren: () => import('./admin/tickets/tickets.module').then(m => m.TicketsModule) }
+      { path: 'recargas', loadChildren: () => import('./admin/recharges/recharges.module').then(m => m.RechargesModule) },
+      { path: 'tickets', loadChildren: () => import('./admin/tickets/tickets.module').then(m => m.TicketsModule) },
+      { path: 'depositos', loadChildren: () => import('./admin/deposits/deposits.module').then(m => m.DepositsModule) }
     ]
   },
 ];
