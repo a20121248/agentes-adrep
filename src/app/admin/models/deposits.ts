@@ -106,7 +106,7 @@ export let deposits: PersonAccountsElement[] = [
         name: 'Roberto Cáceres',
         banks: [
             {
-                name: 'BBVA',
+                name: 'BBVA - Depósito',
                 accounts: [
                     {holder: 'SILA CUEVA', number: '0011 0145 0200252259', ammount: 10},
                     {holder: 'ROBERTO CACERES', number: '0011 0145 0200253255', ammount: 15},
@@ -114,6 +114,16 @@ export let deposits: PersonAccountsElement[] = [
                     {holder: 'SILA CUEVA', number: '0011 0814 0201691112', ammount: 10},
                     {holder: 'ROBERTO CACERES', number: '0011 0814 0201123297', ammount: 15},
                     {holder: 'ROBERTO CACERES', number: '0011 0814 0200880809', ammount: 20}   
+                ]
+            },
+            {
+                name: 'BBVA - Tarjeta de crédito',
+                accounts: [
+                    {holder: 'SILA CUEVA', number: '5124 0982 4339 2663', ammount: 10},
+                    {holder: 'MAXIMO CUEVA', number: '5124 0982 4970 7468', ammount: 15},
+                    {holder: 'BELEN CACERES', number: '5124 0982 8769 7795', ammount: 20},
+                    {holder: 'LESLY DIONICIO', number: '5124 0982 5013 4248', ammount: 10},
+                    {holder: 'ROBERTO CACERES', number: '5124 0982 4333 1505', ammount: 15}
                 ]
             },
             {
