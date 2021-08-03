@@ -156,7 +156,7 @@ export let deposits: PersonAccountsElement[] = [
                     {holder: 'ARTURO HUAMAN', number: '0011 0317 0200495644', ammount: 15},
                     {holder: 'BRIGITTE SALCEDO', number: '0011 0125 0100036932', ammount: 15},
                     {holder: 'ARTURO HUAMAN', number: '0011 0814 0208944490', ammount: 20},
-                    {holder: 'BRIGITTE SALCEDO', number: '0011 0125 0200375521', ammount: 10},
+                    {holder: 'BRIGITTE SALCEDO', number: '0011 0125 0200375521', ammount: 15},
                     {holder: 'ARTURO HUAMAN', number: '0011 0814 0208944547', ammount: 15},
                     {holder: 'BRIGITTE SALCEDO', number: '0011 0317 0200469864', ammount: 20}
                 ]
@@ -225,11 +225,11 @@ export let deposits: PersonAccountsElement[] = [
             {
                 name: 'BBVA',
                 accounts: [
-                    {holder: 'NELSON QUISPE', number: '0011 0115 0200498203', ammount: 15},
-                    {holder: 'NELSON QUISPE', number: '0011 0269 0200257506', ammount: 15},
-                    {holder: 'NELSON QUISPE', number: '0011 0183 0201104439', ammount: 15},
-                    {holder: 'NELSON QUISPE', number: '0011 0129 0200408715', ammount: 15},
-                    {holder: 'NELSON QUISPE', number: '0011 0129 0200408715', ammount: 15}
+                    {holder: 'NELSON QUISPE', number: '0011 0368 0200424974', ammount: 10},
+                    {holder: 'NELSON QUISPE', number: '0011 0814 0200261386', ammount: 15},
+                    {holder: 'NELSON QUISPE', number: '0011 0814 0201025651', ammount: 20},
+                    {holder: 'NELSON QUISPE', number: '0011 0814 0201500775', ammount: 25},
+                    {holder: 'NELSON QUISPE', number: '0011 0814 0201962612', ammount: 30}
                 ]
             },
             {
