@@ -236,21 +236,21 @@ export let deposits: PersonAccountsElement[] = [
                 name: 'Scotiabank',
                 accounts: [
                     {holder: 'NELSON QUISPE', number: '002 3289903', ammount: 15},
-                    {holder: 'NELSON QUISPE', number: '002 3295074', ammount: 15},
-                    {holder: 'NELSON QUISPE', number: '002 3295082', ammount: 15}
+                    {holder: 'NELSON QUISPE', number: '002 3295074', ammount: 20},
+                    {holder: 'NELSON QUISPE', number: '002 3295082', ammount: 20}
                 ]
             },
             {
                 name: 'BanBif - Depósitos',
                 accounts: [
-                    {holder: 'NELSON QUISPE', number: '0080 18164207', ammount: 15},
-                    {holder: 'NELSON QUISPE', number: '0080 18687102', ammount: 15}
+                    {holder: 'NELSON QUISPE', number: '0080 18164207', ammount: 80},
+                    {holder: 'NELSON QUISPE', number: '0080 18687102', ammount: 80}
                 ]
             },
             {
                 name: 'BanBif - Pago de Tarjeta de crédito',
                 accounts: [
-                    {holder: 'NELSON QUISPE', number: '4916 0601 0184 2952', ammount: 15}
+                    {holder: 'NELSON QUISPE', number: '4916 0601 0184 2952', ammount: 80}
                 ]
             }
         ]
