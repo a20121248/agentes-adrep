@@ -1,132 +1,127 @@
-<div class="wrapper" fxLayout.gt-sm="row" fxLayout="row" fxLayoutGap="16px">
-	<div class="no-print" fxFlex.gt-sm="60%" fxFlex fxLayout="column" fxLayoutAlign="center center">
-		<mat-card class="example-card">
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+    <div class="ticket-data" fxFlex="60" fxLayoutAlign="center center">
+		<mat-card fxFlex="400px" fxFlex.xs="100">
 			<mat-card-header>
 				<mat-card-title>Luz del Sur desde CELL POWER</mat-card-title>
 				<mat-card-subtitle>Introduce los datos para generar un voucher de pago</mat-card-subtitle>
 			</mat-card-header>
 			<mat-card-content>
-				<form class="example-form">
-					<mat-form-field class="example-full-width" appearance="outline">
+				<form fxLayout="column">
+					<mat-form-field appearance="outline">
 						<mat-label>Contenido</mat-label>
 						<textarea
 							matInput
 							cdkTextareaAutosize
-							cdkAutosizeMinRows="18"
-							cdkAutosizeMaxRows="18"
+							cdkAutosizeMinRows="21"
+							cdkAutosizeMaxRows="21"
 							placeholder="Copie y pegue el contenido del correo."
 							[ngModelOptions]="{standalone: true}"
 							[ngModel]="content"
 							(ngModelChange)="parseAmount($event)"></textarea>
 					</mat-form-field>
-					<mat-card-content class="mat-card-content">
-						<div class="" fxLayout="row" fxLayoutGap="20px">
-							<div fxFlex="30">
-								<mat-form-field class="example-full-width" appearance="outline">
-									<mat-label>Monto original</mat-label>
-									<input matInput type="number" step=".5" [(ngModel)]="amount" name="amount">
-								</mat-form-field>
-							</div>
-							<div fxFlex="20">
-								<mat-form-field class="example-full-width" appearance="outline">
-									<mat-label>Comisión</mat-label>
-									<input matInput type="number" step=".5" [(ngModel)]="comission" name="comission">
-								</mat-form-field>
-							</div>
-							<div fxFlex="35">
-								<mat-form-field class="example-full-width" appearance="outline">
-									<mat-label>Total</mat-label>
-									<input disabled matInput value="{{ amount + comission | number:'1.2-2' }}">
-								</mat-form-field>
-							</div>
-						</div>
+                    <mat-card-content class="amounts" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Monto original</mat-label>
+                            <input matInput type="number" step=".5" [(ngModel)]="amount" name="amount">
+                        </mat-form-field>                    
+                        <mat-form-field appearance="outline">
+                            <mat-label>Comisión</mat-label>
+                            <input matInput type="number" step=".5" [(ngModel)]="comission" name="comission">
+                        </mat-form-field>                    
+                        <mat-form-field appearance="outline">
+                            <mat-label>Total</mat-label>
+                            <input disabled matInput value="{{ amount + comission | number:'1.2-2' }}">
+                        </mat-form-field>						
 					</mat-card-content>
-				  </form>
+				</form>
 			</mat-card-content>
 			<mat-card-actions>
 				<button mat-raised-button color="primary" mat-button (click)="printPage()">IMPRIMIR</button>
 			</mat-card-actions>
 		</mat-card>
-	</div>
-
-    <div id="ticket" class="ticket">
-        <div class="ticket-top text-center">
-            <div class="company">
-                <img [src]="'assets/img/luz-del-sur.png'" alt="">
+    </div>
+    <div fxLayoutAlign="center">
+        <div class="ticket-print">
+            <h3>Vista preliminar</h3>
+            <div id="ticket" class="ticket">
+                <div class="ticket-top">
+                    <img [src]="'assets/img/luz-del-sur.png'" alt="">
+                    <div class="msg-1">Transacción exitosa</div>
+                    <div class="msg-2">{{ myDate | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+                </div>
+                <div class="ticket-section">
+                    <div class="msg-1">LIBRERÍA BAZAR LORENA</div>
+                    <div class="msg-2">Calle Maximiliano Carranza 1177</div>
+                    <div class="msg-2">San Juan de Miraflores, Lima</div>
+                </div>
+                <div class="ticket-section">
+                    <div class="msg-1">CONSTANCIA DE PAGO</div>
+                    <div class="msg-2">LUZ DEL SUR</div>
+                </div>
+                <table class="voucher">
+                    <tbody>
+                    <tr>
+                        <td class="item">SUMINISTRO</td>
+                        <td class="sep">:</td>
+                        <td class="value">{{ supply }}</td>
+                    </tr>
+                    <tr>
+                        <td class="item">NOMBRE</td>
+                        <td class="sep">:</td>
+                        <td class="value">{{name}}</td>
+                    </tr>
+                    <tr>
+                        <td class="item">Nº OPERACIÓN</td>
+                        <td class="sep">:</td>
+                        <td class="value">{{ operation }}</td>
+                    </tr>
+                    <tr>
+                        <td class="item">Nº AUTORIZAC.</td>
+                        <td class="sep">:</td>
+                        <td class="value">{{ authorization }}</td>
+                    </tr>
+                    <tr>
+                        <td class="item">TIPO DE PAGO</td>
+                        <td class="sep">:</td>
+                        <td class="value">{{ payment_type }}</td>
+                    </tr>
+                    <tr>
+                        <td class="item">MONTO</td>
+                        <td class="sep">:</td>
+                        <td class="value">
+                        <div fxLayout="row" fxLayoutAlign="space-between">
+                            <div>S/</div>
+                            <div>{{ amount | number:'1.2-2' }}</div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item">COMISIÓN</td>
+                        <td class="sep">:</td>
+                        <td class="value">
+                            <div fxLayout="row" fxLayoutAlign="space-between">
+                            <div>S/</div>
+                            <div>{{ comission | number:'1.2-2' }}</div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="item">MONTO TOTAL</td>
+                        <td class="sep">:</td>
+                        <td class="value">
+                        <div fxLayout="row" fxLayoutAlign="space-between">
+                            <div>S/</div>
+                            <div>{{ amount + comission | number:'1.2-2' }}</div>
+                        </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="ticket-section">
+                    <div class="msg-3">PAGO DE RECIBO SUJETO A COMISIÓN</div>
+                    <div class="msg-4">Antes de retirarse de la ventanilla revise sus datos y verifique su vuelto. Conserve su Constancia de Pago, acredita la transacción realizada.</div>
+                </div>
             </div>
-            <div class="msg-1">Transacción exitosa</div>
-            <div class="msg-2">{{ myDate | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
-            <div class="msg-2">Luz del Sur - {{ supply }}</div>
-        </div>
-        <div class="ticket-company text-center">
-            <div class="msg-1">LIBRERÍA BAZAR LORENA</div>
-            <div class="msg-2">Calle Maximiliano Carranza 1177 - S.J.M.</div>
-            <div class="msg-2">&nbsp;</div>
-            <div class="msg-1">CONSTANCIA DE PAGO</div>
-            <div class="msg-2">LUZ DEL SUR</div>
-        </div>
-        <table class="voucher">
-            <tbody>
-            <tr>
-                <td class="item">SUMINISTRO</td>
-                <td class="sep">:</td>
-                <td class="value">{{ supply }}</td>
-            </tr>
-            <tr>
-                <td class="item">NOMBRE</td>
-                <td class="sep">:</td>
-                <td class="value">{{name}}</td>
-            </tr>
-            <tr>
-                <td class="item">Nº OPERACIÓN</td>
-                <td class="sep">:</td>
-                <td class="value">{{ operation }}</td>
-            </tr>
-            <tr>
-                <td class="item">Nº AUTORIZAC.</td>
-                <td class="sep">:</td>
-                <td class="value">{{ authorization }}</td>
-            </tr>
-            <tr>
-                <td class="item">TIPO DE PAGO</td>
-                <td class="sep">:</td>
-                <td class="value">{{ payment_type }}</td>
-            </tr>
-            <tr>
-                <td class="item">MONTO</td>
-                <td class="sep">:</td>
-                <td class="value">
-                <div fxLayout="row" fxLayoutAlign="space-between">
-                    <div>S/</div>
-                    <div>{{ amount | number:'1.2-2' }}</div>
-                </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="item">COMISIÓN</td>
-                <td class="sep">:</td>
-                <td class="value">
-                    <div fxLayout="row" fxLayoutAlign="space-between">
-                    <div>S/</div>
-                    <div>{{ comission | number:'1.2-2' }}</div>
-                </div>
-                </td>
-            </tr>
-            <tr>
-                <td class="item">MONTO TOTAL</td>
-                <td class="sep">:</td>
-                <td class="value">
-                <div fxLayout="row" fxLayoutAlign="space-between">
-                    <div>S/</div>
-                    <div>{{ amount + comission | number:'1.2-2' }}</div>
-                </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <div class="ticket-bottom">
-            <div class="msg-3 text-center">PAGO DE RECIBO SUJETO A COMISIÓN</div>
-            <p class="msg-4 text-break">Antes de retirarse de la ventanilla revise sus datos y verifique su vuelto. Conserve su Constancia de Pago, acredita la transacción realizada.</p>          
         </div>
     </div>
 </div>
