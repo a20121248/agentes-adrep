@@ -8,7 +8,7 @@ import {Title} from '@angular/platform-browser';
 })
 export class TicketIbkComponent implements OnInit {
     content = '';
-    amount = 97.70;
+    amount = 0;
     comission = 1.00;
     myDate = new Date();  
 

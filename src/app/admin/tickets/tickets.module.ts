@@ -13,19 +13,20 @@ import { TicketBbvaComponent } from './ticket-bbva/ticket-bbva.component';
 import { TicketBcpComponent } from './ticket-bcp/ticket-bcp.component';
 import { TicketIbkComponent } from './ticket-ibk/ticket-ibk.component';
 import { TicketScotiaComponent } from './ticket-scotia/ticket-scotia.component';
-import { TicketGeneratorCpComponent } from './ticket-generator-cp/ticket-generator-cp.component';
-import { TicketGeneratorComponent } from './ticket-generator/ticket-generator.component';
-import { TicketLuzDelSurComponent } from './ticket-luz-del-sur/ticket-luz-del-sur.component';
+import { TicketLuzDelSurCellPowerComponent } from './ticket-luz-del-sur-cell-power/ticket-luz-del-sur-cell-power.component';
+import { TicketLuzDelSurPasarelaComponent } from './ticket-luz-del-sur-pasarela/ticket-luz-del-sur-pasarela.component';
+import { TicketLuzDelSurManualComponent } from './ticket-luz-del-sur-manual/ticket-luz-del-sur-manual.component';
+
 
 export const routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'luz-del-sur' },
-    { path: 'luz-del-sur', component: TicketLuzDelSurComponent },
+    { path: '', pathMatch: 'full', redirectTo: 'luz-del-sur-cell-power' },
+    { path: 'luz-del-sur-cell-power', component: TicketLuzDelSurCellPowerComponent },
+    { path: 'luz-del-sur-pasarela', component: TicketLuzDelSurPasarelaComponent },
+    { path: 'luz-del-sur-manual', component: TicketLuzDelSurManualComponent },
     { path: 'bbva', component: TicketBbvaComponent },
     { path: 'bcp', component: TicketBcpComponent },
     { path: 'interbank', component: TicketIbkComponent },
-    { path: 'scotiabank', component: TicketScotiaComponent },
-    { path: 'luz-del-sur-datos', component: TicketGeneratorComponent },
-    { path: 'cell-power', component: TicketGeneratorCpComponent }
+    { path: 'scotiabank', component: TicketScotiaComponent }
 ];
 
 
@@ -33,9 +34,9 @@ export const routes = [
     declarations: [
         TicketBbvaComponent,
         TicketBcpComponent,
-        TicketGeneratorComponent,
-        TicketGeneratorCpComponent,
-        TicketLuzDelSurComponent,
+        TicketLuzDelSurCellPowerComponent,
+        TicketLuzDelSurPasarelaComponent,
+        TicketLuzDelSurManualComponent,
         TicketIbkComponent,
         TicketScotiaComponent
     ],

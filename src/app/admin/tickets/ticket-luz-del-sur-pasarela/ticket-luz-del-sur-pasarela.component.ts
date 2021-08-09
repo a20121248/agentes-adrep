@@ -2,25 +2,42 @@ import { Component, OnInit } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-ticket-generator',
-  templateUrl: './ticket-generator.component.html',
-  styleUrls: ['./ticket-generator.component.scss']
+  selector: 'app-ticket-luz-del-sur-pasarela',
+  templateUrl: './ticket-luz-del-sur-pasarela.component.html',
+  styleUrls: ['./ticket-luz-del-sur-pasarela.component.scss']
 })
-export class TicketGeneratorComponent implements OnInit {
-
+export class TicketLuzDelSurPasarelaComponent implements OnInit {
+  content = '';
   supply = '303341';
   operation = '1077621';
-  name = 'Javier Monzon';
-  payment_type = 'Pago a cuenta'
+  authorization = '16932532'
+  name = '';
+  payment_type = 'DEUDA TOTAL';
+  payment_method = 'VISA'
   amount = 97.70;
   comission = 1.00;
-  myDate = new Date();  
+  myDate = new Date();
 
   constructor(private titleService: Title) {
     this.titleService.setTitle("LUZ DEL SUR | Agentes ADREP");
     setInterval(() => {
       this.myDate = new Date();
     }, 1000);
+  }
+
+  public parseAmount(event: string): void {
+    this.content = event.trim();
+    var suministro_str = new String(this.content); 
+    var index = suministro_str.indexOf("Descripción:"); 
+    var resto = this.content.substring(index);
+    var lines = resto.split(/\r?\n/);
+    // SUMINISTRO:                    1307726
+    this.payment_type = lines[1].trim();
+    this.supply = lines[4].trim();
+    this.operation = lines[7].trim();
+    this.amount = parseFloat(lines[13].replace(/,/g, ''));
+    this.payment_method = lines[16].trim() + ' ' + lines[17].trim();
+    this.authorization = lines[20].trim();
   }
 
   public printPage(): void {

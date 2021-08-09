@@ -6,26 +6,32 @@
                 <mat-card-subtitle>Introduce los datos para generar un voucher de pago</mat-card-subtitle>
             </mat-card-header>
 			<mat-card-content>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-label>Número de suministro</mat-label>
                     <input matInput type="text" [(ngModel)]="supply" name="supply">
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-label>Número de operación</mat-label>
                     <input matInput type="text" [(ngModel)]="operation" name="operation">
                 </mat-form-field>
-                <mat-form-field>
+                <mat-form-field appearance="outline">
                     <mat-label>Nombre del cliente</mat-label>
                     <input matInput type="text" [(ngModel)]="name" name="name">
                 </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Monto (S/)</mat-label>
-                    <input matInput type="number" step=".5" [(ngModel)]="amount" name="amount">
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Comisión (S/)</mat-label>
-                    <input matInput type="number" step=".5" [(ngModel)]="comission" name="comission">
-                </mat-form-field>
+                <mat-card-content class="amounts" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Monto original (S/)</mat-label>
+                        <input matInput type="number" step=".5" [(ngModel)]="amount" name="amount">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Comisión (S/)</mat-label>
+                        <input matInput type="number" step=".5" [(ngModel)]="comission" name="comission">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Total (S/)</mat-label>
+                        <input disabled matInput value="{{ amount + comission | number:'1.2-2' }}">
+                    </mat-form-field>
+                </mat-card-content>
             </mat-card-content>
 			<mat-card-actions>
 				<button mat-raised-button color="primary" mat-button (click)="printPage()">IMPRIMIR</button>

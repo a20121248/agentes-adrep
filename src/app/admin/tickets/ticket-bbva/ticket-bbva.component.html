@@ -1,70 +1,64 @@
-<div class="wrapper" fxLayout.gt-sm="row" fxLayout="row" fxLayoutGap="16px">
-	<div fxFlex.gt-sm="60%" fxFlex fxLayout="column" fxLayoutAlign="center center">
-		<mat-card class="data-card">
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+    <div class="ticket-data" fxFlex="60" fxLayoutAlign="center center">
+        <mat-card fxFlex="400px" fxFlex.xs="100">
 			<mat-card-header>
 				<mat-card-title>Datos de pago - BBVA</mat-card-title>
 				<mat-card-subtitle>Introduce los datos para generar un voucher de pago</mat-card-subtitle>
 			</mat-card-header>
-			<mat-card-content>
-				<form class="data-form">
-					<mat-form-field class="data-full-width" appearance="outline">
-						<mat-label>Contenido</mat-label>
-						<textarea
-							matInput
-							cdkTextareaAutosize
-							cdkAutosizeMinRows="18"
-							cdkAutosizeMaxRows="18"
-							placeholder="Copie y pegue el contenido del correo."
-							[ngModelOptions]="{standalone: true}"
-							[ngModel]="content"
-							(ngModelChange)="parseAmount($event)"></textarea>
+            <mat-card-content fxLayout="column">
+				<mat-form-field appearance="outline">
+					<mat-label>Contenido</mat-label>
+					<textarea
+						matInput
+						cdkTextareaAutosize
+                        cdkAutosizeMinRows="21"
+                        cdkAutosizeMaxRows="21"
+						placeholder="Copie y pegue el contenido del correo."
+						[ngModelOptions]="{standalone: true}"
+						[ngModel]="content"
+						(ngModelChange)="parseAmount($event)"></textarea>
+				</mat-form-field>
+				<mat-card-content class="amounts" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+					<mat-form-field appearance="outline">
+						<mat-label>Monto original (S/)</mat-label>
+						<input matInput type="number" step=".5" [(ngModel)]="amount" name="amount">
 					</mat-form-field>
-					<mat-card-content class="mat-card-content">
-						<div class="" fxLayout="row" fxLayoutGap="20px">
-							<div fxFlex="30">
-								<mat-form-field class="data-full-width" appearance="outline">
-									<mat-label>Monto original</mat-label>
-									<input matInput type="number" step=".5" [(ngModel)]="amount" name="amount">
-								</mat-form-field>
-							</div>
-							<div fxFlex="20">
-								<mat-form-field class="data-full-width" appearance="outline">
-									<mat-label>Comisión</mat-label>
-									<input matInput type="number" step=".5" [(ngModel)]="comission" name="comission">
-								</mat-form-field>
-							</div>
-							<div fxFlex="35">
-								<mat-form-field class="data-full-width" appearance="outline">
-									<mat-label>Total</mat-label>
-									<input matInput value="{{ amount + comission | number:'1.2-2' }}">
-								</mat-form-field>
-							</div>
-						</div>
-					</mat-card-content>
-				  </form>
+					<mat-form-field appearance="outline">
+						<mat-label>Comisión (S/)</mat-label>
+						<input matInput type="number" step=".5" [(ngModel)]="comission" name="comission">
+					</mat-form-field>
+					<mat-form-field appearance="outline">
+						<mat-label>Total (S/)</mat-label>
+						<input disabled matInput value="{{ amount + comission | number:'1.2-2' }}">
+					</mat-form-field>
+				</mat-card-content>
 			</mat-card-content>
 			<mat-card-actions>
 				<button mat-raised-button color="primary" mat-button (click)="printPage()">IMPRIMIR</button>
 			</mat-card-actions>
 		</mat-card>
 	</div>
-
-	<div id="ticket" class="ticket">
-		<div class="company">
-        	<img [src]="'assets/img/bbva.png'" alt="">
-		</div>
-		<div class="ticket-company text-center">
-			<div class="msg-1">CONSTANCIA DE PAGO</div>
-			<div class="msg-2">Transacción exitosa</div>
-		</div>
-		<pre class="voucher-content">{{ content }}
+    <div fxLayoutAlign="center">
+        <div class="ticket-print">
+            <h3>Vista preliminar</h3>
+			<div id="ticket" class="ticket">
+				<div class="company">
+					<img [src]="'assets/img/bbva.png'" alt="">
+				</div>
+				<div class="ticket-company text-center">
+					<div class="msg-1">CONSTANCIA DE PAGO</div>
+					<div class="msg-2">Transacción exitosa</div>
+				</div>
+				<pre class="voucher-content">{{ content }}
 
 Comisión:	S/ {{ comission | number:'1.2-2' }}
 
 Total:	S/ {{ amount + comission | number:'1.2-2' }}</pre>
-		<div class="ticket-bottom">
-			<div class="msg-3 text-center">PAGO DE RECIBO SUJETO A COMISIÓN</div>
-			<p class="msg-4 text-break">Antes de retirarse de la ventanilla revise sus datos y verifique su vuelto. Conserve su Constancia de Pago, acredita la transacción realizada.</p>          
+				<div class="ticket-bottom">
+					<div class="msg-3 text-center">PAGO DE RECIBO SUJETO A COMISIÓN</div>
+					<div class="msg-4 text-break">Antes de retirarse de la ventanilla revise sus datos y verifique su vuelto. Conserve su Constancia de Pago, acredita la transacción realizada.</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

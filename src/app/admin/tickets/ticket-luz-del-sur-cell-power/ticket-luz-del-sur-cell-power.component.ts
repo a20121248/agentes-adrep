@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import {Title} from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-ticket-luz-del-sur',
-  templateUrl: './ticket-luz-del-sur.component.html',
-  styleUrls: ['./ticket-luz-del-sur.component.scss']
+  selector: 'app-ticket-luz-del-sur-cell-power',
+  templateUrl: './ticket-luz-del-sur-cell-power.component.html',
+  styleUrls: ['./ticket-luz-del-sur-cell-power.component.scss']
 })
-export class TicketLuzDelSurComponent implements OnInit {
+export class TicketLuzDelSurCellPowerComponent implements OnInit {
   content = '';
   supply = '303341';
   operation = '1077621';
   authorization = '16932532'
-  name = 'Javier Monzon';
+  name = 'JAVIER MONZON';
   payment_type = 'Pago a cuenta';
   amount = 97.70;
   comission = 1.00;

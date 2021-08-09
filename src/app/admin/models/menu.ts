@@ -56,12 +56,17 @@ export let menu: NavItem[] = [
       {
         displayName: 'Luz del Sur - Cell Power',
         iconName: 'account_balance',
-        route: 'tickets/luz-del-sur'
+        route: 'tickets/luz-del-sur-cell-power'
+      },
+      {
+        displayName: 'Luz del Sur - Pasarela',
+        iconName: 'account_balance',
+        route: 'tickets/luz-del-sur-pasarela'
       },
       {
         displayName: 'Luz del Sur - Manual',
         iconName: 'account_balance',
-        route: 'tickets/luz-del-sur-datos'
+        route: 'tickets/luz-del-sur-manual'
       },
       {
         displayName: 'BBVA',

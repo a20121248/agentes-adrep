@@ -68,6 +68,15 @@
 }
 
 .ticket-data {
+  textarea, mat-form-field {
+    font-size: 12px;
+    font-family: 'Arial';
+  }
+  .amounts {
+    mat-form-field {
+      width: 30%;
+    }
+  }
   mat-card-content {
     margin-bottom: 0;
   }
