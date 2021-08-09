@@ -1,18 +1,18 @@
 export interface PersonAccountsElement {
     name: string;
     banks: BankAccountsElement[];
-  }
-  
-  export interface BankAccountsElement {
+}
+
+export interface BankAccountsElement {
     name: string;
     accounts: AccountElement[];
-  }
-  
-  export interface AccountElement {
+}
+
+export interface AccountElement {
     holder: string;
     number: string;
     ammount: number;
-  }
+}
 
 export let deposits: PersonAccountsElement[] = [
     {

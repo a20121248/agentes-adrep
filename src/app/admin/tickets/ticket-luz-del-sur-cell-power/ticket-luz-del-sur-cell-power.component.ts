@@ -18,7 +18,7 @@ export class TicketLuzDelSurCellPowerComponent implements OnInit {
   myDate = new Date();
 
   constructor(private titleService: Title) {
-    this.titleService.setTitle("LUZ DEL SUR | Agentes ADREP");
+    this.titleService.setTitle("LUZ DEL SUR | Librería Bazar LORENA");
     setInterval(() => {
       this.myDate = new Date();
     }, 1000);

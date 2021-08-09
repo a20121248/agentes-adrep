@@ -1,31 +1,81 @@
-<p>dashboard works!</p>
+<h1>Dashboard</h1>
+<hr>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<h2>Listado de pagos de cliente</h2>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+    <div class="ticket-data" fxFlex="60" fxLayoutAlign="center center">
+        <mat-card fxFlex="400px" fxFlex.xs="100">
+            <mat-card-content fxLayout="column">
+				<mat-form-field appearance="outline">
+					<mat-label>Contenido</mat-label>
+					<textarea
+						matInput
+						cdkTextareaAutosize
+                        cdkAutosizeMinRows="11"
+                        cdkAutosizeMaxRows="11"
+						placeholder="Copie y pegue el contenido del correo."
+						[ngModelOptions]="{standalone: true}"
+						[ngModel]="content"
+						(ngModelChange)="parseClientPayments($event)"></textarea>
+				</mat-form-field>
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-raised-button color="primary" mat-button (click)="printClientPayments()">IMPRIMIR</button>
+			</mat-card-actions>
+		</mat-card>
+	</div>
+    <div fxLayoutAlign="center">
+        <div class="ticket-print">
+            <h3>Vista preliminar</h3>
+			<div id="ticket" class="ticket">
+                <div class="ticket-section">
+                    <div class="msg-1">LIBRERÍA BAZAR LORENA</div>
+                    <div class="msg-2">Calle Maximiliano Carranza 1177</div>
+                    <div class="msg-2">San Juan de Miraflores, Lima</div>
+                    <div class="msg-2">{{ myDate | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+                </div>
+                <table class="voucher">
+                    <tbody>
+						<tr *ngFor="let payment of payments">
+							<td class="item">{{ payment.service }}</td>
+							<td class="sep">:</td>
+							<td class="value">
+								<div fxLayout="row" fxLayoutAlign="space-between">
+									<div>S/</div>
+									<div>{{ payment.amount | number:'1.2-2' }}</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td class="item">TOTAL</td>
+							<td class="sep">:</td>
+							<td class="value">
+								<div fxLayout="row" fxLayoutAlign="space-between">
+									<div>S/</div>
+									<div>{{ total | number:'1.2-2' }}</div>
+								</div>
+							</td>
+						</tr>
+					</tfoot>					
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br><br><br>
+
+<h2>Resumen de ventas del día</h2>
+Gráfico
+
+<br><br><br>
+
+<h2>Resumen de ventas del mes</h2>
+Gráfico
+
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
