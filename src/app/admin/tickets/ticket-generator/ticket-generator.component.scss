@@ -1,130 +1,92 @@
-@media print {    
-  .no-print, .no-print * {
-    display: none!important;
-  }
-}
-
-.company {
-  text-align: center;
-  margin-bottom: 9px;
-  img {
-    height: 50px;
-  }    
-}
-
-.ticket {
+.ticket {  
   line-height: 1;
   max-width: 180px;
   width: 180px;
-}
+  font-family: Arial, Helvetica, sans-serif;
 
-.voucher {
-  font-size: 9px;
-  font-family: 'Arial';
-}
+  .ticket-top {
+    text-align: center;
+    img {
+      height: 50px;
+      margin-bottom: 9px;
+    }
+  }
+  
+  .ticket-section {
+    margin: 11px 0 7px 0;
+  }
 
-.msg-1 {
-  font-size: 10px;
-  font-weight: 600;
-  text-align: center;
-}
+  table.voucher {
+    font-size: 9px;
+    word-break: break-all;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
 
-.msg-2 {
-  font-size: 9px;
-  text-align: center;
-  line-height: 1.7;
-}
-
-.msg-3 {
-  margin: 10px 0 4px 0;
-  font-size: 9px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.msg-4 {
-  font-size: 9px;
-  text-align: justify;
-}
-
-td,
-th,
-tr,
-table {
-  &.voucher {
-    padding: 0!important;
-  word-break: break-all;
-  white-space: pre-wrap;       /* Since CSS 2.1 */
-  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  white-space: -pre-wrap;      /* Opera 4-6 */
-  white-space: -o-pre-wrap;    /* Opera 7 */
-  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    th.item, td.item {
+      width: 75px;
+      font-weight: 600;
+    }
+    
+    th.sep, td.sep {
+      width: 5px;
+      font-weight: 600;
+    }
+    
+    th.value, td.value {
+      width: 100px;
+    }    
+  }
+  
+  .msg-1 {
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+  
+  .msg-2 {
+    font-size: 9px;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  
+  .msg-3 {
+    margin: 10px 0 4px 0;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .msg-4 {
+    font-size: 9px;
+    text-align: justify;
   }
 }
 
-.ticket-top h1 {
-  font-size: 13px;
-  line-height: 1;
-  font-weight: 600;
-  text-align: center;
-  margin: 0;
-}
-
-.ticket-company {
-  margin: 6px 0 7px 0;
-}
-
-.title-2 {
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.title-3 {
-  font-size: 12px;
-  text-align: center;
-}
-
-th.item, td.item {
-  width: 75px;
-  font-weight: 600;
-}
-
-th.sep, td.sep {
-  width: 5px;
-  font-weight: 600;
-}
-
-th.value, td.value {
-  width: 100px;
-}
-
-.centrado {
+.ticket-data {
+  mat-card-content {
+    margin-bottom: 0;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  mat-card-actions {
     text-align: center;
-    align-content: center;
+    margin-bottom: .5rem;
+  }
 }
 
-img {
-    max-width: inherit;
-    width: inherit;
-}
-
-.example-card {
-  max-width: 400px;
-}
-  
-.example-header-image {
-  background-image: url('/assets/img/luz-del-sur.png');
-  background-size: cover;
-}
-
-
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-  
-.example-full-width {
-  width: 100%;
+.ticket-print {
+  h3 {
+    text-align: center;
+    font-weight: 600;
+    margin-top: .8rem;
+  }
+  .ticket {
+    border: 1px dashed black;
+  }
 }
